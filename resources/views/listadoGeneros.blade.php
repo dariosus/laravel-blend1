@@ -13,7 +13,9 @@
   <ul>
     @foreach ($generos as $genero)
       <li>
-        {{$genero["name"]}}
+        <a href="/generos/{{$genero->id}}">
+          {{$genero["name"]}}
+        </a>
       </li>
     @endforeach
   </ul>

@@ -18,6 +18,11 @@
           <li><a href="/generos">Generos</a></li>
           <li><a href="/actores">Actores</a></li>
         </ul>
+        <form class="" action="/buscador" method="GET">
+          {{ csrf_field() }}
+          <input type="text" name="buscador" value="">
+          <input type="submit" name="" value="Buscar">
+        </form>
       </header>
       @yield("contenido")
       <footer>

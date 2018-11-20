@@ -11,6 +11,11 @@
 |
 */
 
+Route::get("/buscador", "PeliculasController@buscar");
+
+Route::get("/agregarPelicula", "PeliculasController@agregar");
+Route::post("/agregarPelicula", "PeliculasController@almacenar");
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,21 +24,7 @@ Route::get("/bienvenidos", function() {
   return "Bienvenidos a todos";
 });
 
-Route::get("/peliculas", function() {
-  $peliculas = [
-    0 => [
-      "title" => "Harry Potter",
-      "rating" => 7.6
-    ],
-    1 => [
-      "title" => "Toy Story",
-      "rating" => 8.5
-    ]
-  ];
-
-  $vac = compact("peliculas");
-  return view("peliculas", $vac);
-});
+Route::get("/peliculas", "PeliculasController@listado");
 
 Route::get("/peliculas/{id}", function($id) {
   $vac = compact("id");
@@ -45,29 +36,5 @@ Route::get("/peliculas/{id}", function($id) {
   */
 });
 
-Route::get("generos", function() {
-  return "Generos";
-});
-
-Route::get("/agregarPelicula", function() {
-  return view("agregarPelicula");
-});
-
-Route::post("/agregarPelicula", function() {
-  return "Agregar pelí por POST";
-});
-
-Route::get("/generos", function() {
-  $generos = [
-    0 => [
-      "id" => 1,
-      "name" => "Drama"
-    ],
-    1 => [
-      "id" => 2,
-      "name" => "Comedia"
-    ]
-  ];
-  $vac = compact("generos");
-  return view("listadoGeneros", $vac);
-});
+Route::get("generos", "GenerosController@listado");
+Route::get("generos/{id}", "GenerosController@detalle");
