@@ -10,4 +10,8 @@ class Pelicula extends Model
     //public $primaryKey = "id";
     //public $timestamps = false;
     public $guarded = [];
+
+    public function genero() {
+        return $this->belongsTo("App\Genero", "genre_id");
+    }
 }

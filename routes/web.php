@@ -26,15 +26,11 @@ Route::get("/bienvenidos", function() {
 
 Route::get("/peliculas", "PeliculasController@listado");
 
-Route::get("/peliculas/{id}", function($id) {
-  $vac = compact("id");
-  return view("detallePelicula", $vac);
-  /* return view("detallePelicula", [
-      "id" => $id,
-      "titulo" => 57
-    ]);
-  */
-});
+Route::get("/peliculas/{id}", "PeliculasController@detalle");
 
 Route::get("generos", "GenerosController@listado");
 Route::get("generos/{id}", "GenerosController@detalle");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

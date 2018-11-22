@@ -2,11 +2,20 @@
 
 @section("contenido")
     <h1>Agregar película</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form class="" action="/agregarPelicula" method="post">
       {{ csrf_field() }}
       <div class="">
         <label for="">Titulo:</label>
-        <input type="text" name="title" value="">
+        <input type="text" name="titulo" value="{{old("titulo")}}">
       </div>
       <div class="">
         <label for="">Rating:</label>
