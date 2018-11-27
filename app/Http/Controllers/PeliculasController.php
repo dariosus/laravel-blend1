@@ -76,4 +76,8 @@ class PeliculasController extends Controller
 
       return view("detallePelicula", compact("pelicula"));
     }
+
+    public function apiListado() {
+      return Pelicula::all();
+    }
 }

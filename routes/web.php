@@ -28,8 +28,8 @@ Route::get("/peliculas", "PeliculasController@listado");
 
 Route::get("/peliculas/{id}", "PeliculasController@detalle");
 
-Route::get("generos", "GenerosController@listado");
-Route::get("generos/{id}", "GenerosController@detalle");
+Route::get("generos", "GenerosController@listado")->middleware("ejemplo");
+Route::get("generos/{id}", "GenerosController@detalle")->middleware("ejemplo");
 
 Auth::routes();
 
