@@ -34,3 +34,7 @@ Route::get("generos/{id}", "GenerosController@detalle")->middleware("ejemplo");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get("/pruebaJS", function() {
+  return view("prueba");
+});
