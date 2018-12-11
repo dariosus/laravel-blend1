@@ -38,3 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get("/pruebaJS", function() {
   return view("prueba");
 });
+
+Route::get("/pokemon", function() {
+  return view("pokemon");
+});

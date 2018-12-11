@@ -10,7 +10,7 @@ use Auth;
 class PeliculasController extends Controller
 {
     public function listado() {
-      $peliculas = Pelicula::all();
+      $peliculas = Pelicula::orderBy("id", "desc")->get();
 
       $vac = compact("peliculas");
 
@@ -78,6 +78,6 @@ class PeliculasController extends Controller
     }
 
     public function apiListado() {
-      return Pelicula::all();
+      return Pelicula::orderBy("id", "desc")->get();
     }
 }

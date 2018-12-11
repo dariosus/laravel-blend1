@@ -7,10 +7,9 @@
     </title>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/estilos.css">
-    <script type="text/javascript" src="/js/prueba.js">
 
-    </script>
     @yield("css")
+    @yield("js")
   </head>
   <body>
     <div class="container">

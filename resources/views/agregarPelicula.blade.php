@@ -44,7 +44,20 @@
         </select>
       </div>
       <div class="">
+        <label for="">Pais de origen:</label>
+        <select class="paises" name="pais" disabled>
+          <option value="">Cargando...</option>
+        </select>
+      </div>
+      <div class="">
         <input type="submit" name="" value="Agregar película">
       </div>
     </form>
+@endsection
+
+
+@section("js")
+  <script type="text/javascript" src="/js/cargarPaises.js">
+
+  </script>
 @endsection
